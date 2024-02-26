@@ -12,7 +12,7 @@ public class User {
     private int height;
     private int weight;
     private String hair;
-    public float gpa;
+    public float gpa; // please dont ask why it's public. it wouldn't work while private.
     public User() { 
     }
     public User(String name, int height, int weight, String hair, float gpa) {

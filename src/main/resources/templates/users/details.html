@@ -1,3 +1,6 @@
+<!-- Anneke Johnson 
+CMPT 276 Assignment 2-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +15,7 @@
     <main class="container-fluid">
         <h1>EDIT STUDENT</h1>
         <p>Note: If you wish to edit something, please fill every category, even if you're keeping that category the same.</p>
+        <!-- form displays the current data, and allows you to change it -->
         <form th:each="user:${us}" th:action="@{'/users/edit/'+${user.uid}}" method="post">
             <label for="name" th:text="${user.name}"></label>
             <input type="text" id="name" name="name" placeholder="Name">
@@ -25,8 +29,9 @@
             <input type="number" id="gpa" name="gpa" placeholder="GPA">
             <input type="submit" value="SEND" class="btn btn-primary" th:style="'padding: 10px;'">
         </form>
+        <!-- this button immediately deletes the selected student. no mercy. -->
         <a th:each="user:${us}" th:href="@{'/users/delete/'+${user.uid}}" class="btn btn-primary">DELETE STUDENT</a>
-        <a href="/users/view" class="btn btn-primary">BACK TO HOME</a>
+        <a href="/users/view" class="btn btn-primary">BACK TO HOME</a> <!-- takes you back to the previous page!-->
     </main>
 </body>
 </html>

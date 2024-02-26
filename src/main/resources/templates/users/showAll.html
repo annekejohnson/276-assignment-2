@@ -1,3 +1,6 @@
+<!-- Anneke Johnson 
+CMPT 276 Assignment 2-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,15 +15,16 @@
 <body>
     <main class="container-fluid">
         <h1>STUDENTS</h1>
-            <li th:each="user:${us}">
+            <li th:each="user:${us}"><!-- go through all users, displaying their info -->
                 <a th:href="@{'details/'+${user.uid}}" class="btn btn-primary">
-                <span th:text="${user.name}"></span>
+                <span th:text="${user.name}"></span> <!-- clicking this will bring you to their details/edit page -->
                 </a>
                 <span th:text="${user.gpa}"></span>
-                <div th:style="'height:'+${user.height}+'px; width:'+${user.weight}+'px; background-color:'+${user.hair}+'; border-style: solid; border-color: black;'"></span>
+                <div th:style="'height:'+${user.height}+'px; width:'+${user.weight}+'px; background-color:'
+                +${user.hair}+'; border-style: solid; border-color: black;'"></span> <!-- makes a square of their height, weight, and hair colour!!!-->
             </li>
             <div></div>
-            <a href="../add.html" class="btn btn-primary">ADD STUDENT</a>
+            <a href="../add.html" class="btn btn-primary">ADD STUDENT</a> <!-- takes you to the add page-->
     </main>
 </body>
 </html>
